@@ -1,2 +1,2 @@
-# Geekbrains-Angular-D3
-Домашние работы по курсу Angular.js и D3.js
+# Angular.js / D3.js
+Домашние работы по курсу http://geekbrains.ru/courses/34
