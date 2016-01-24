@@ -1,0 +1,38 @@
+{
+  "name": "kit",
+  "version": "1.0.0",
+  "description": "kit",
+  "main": "server.js",
+  "dependencies": {
+    "express": "latest",
+    "jade": "latest"
+  },
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-plumber": "latest",
+    "browserify": "latest",
+    "gulp-sass": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-notify": "latest",
+    "gulp-rename": "latest",
+    "browser-sync": "latest",
+    "vinyl-source-stream": "latest",
+    "gulp-sourcemaps": "latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vryabinin/kit.git"
+  },
+  "keywords": [
+    "geekbrains"
+  ],
+  "author": "geekbrains",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vryabinin/kit/issues"
+  },
+  "homepage": "https://github.com/vryabinin/kit#readme"
+}
