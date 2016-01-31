@@ -1,7 +1,7 @@
 'use strict';
 
 class Server {
-  bootstrap(env){
+  bootstrap(env) {
     this.express = require('express');
     this.app = this.express();
     this.clientRouter = this.express.Router();
@@ -13,10 +13,10 @@ class Server {
     this.app.set('view cache', this.env === 'production');
 
     this.setupRouting();
-    this.app.listen(8880);
+    this.app.listen(8080);
   }
 
-  setupRouting(){
+  setupRouting() {
     const path = require('path');
 
     this.app.use('/build', this.express.static(path.join(__dirname, 'build'), {
@@ -31,7 +31,7 @@ class Server {
 
     this.apiRouter.get('/', (req, res, next) => {
       res.json({
-        "message" : "Hello from API!"
+        "message": "Hello from API!"
       })
     });
 

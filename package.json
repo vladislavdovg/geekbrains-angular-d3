@@ -24,15 +24,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vryabinin/kit.git"
+    "url": "git+https://github.com/vladislavdovg/Geekbrains-Angular-D3.git"
   },
   "keywords": [
+    "angular",
+    "d3",
     "geekbrains"
   ],
-  "author": "geekbrains",
+  "author": "Vladislav Dovgopaty",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vryabinin/kit/issues"
+    "url": "https://github.com/vladislavdovg/Geekbrains-Angular-D3/issues"
   },
-  "homepage": "https://github.com/vryabinin/kit#readme"
+  "homepage": "https://github.com/vladislavdovg/Geekbrains-Angular-D3"
 }

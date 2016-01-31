@@ -1,1 +1,10 @@
-console.log('It works!');
+require('../../vendor/angular/angular');
+
+angular.module('kitApp', []);
+
+// Module
+//   Constant
+//   Value
+//   Factory
+//   Service
+//   Provider
