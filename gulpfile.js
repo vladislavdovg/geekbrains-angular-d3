@@ -45,7 +45,7 @@ gulp.task('watch', function () {
     proxy: 'localhost:8080',
     port: 3000,
     open: false,
-    notify: false,
+    notify: false
   });
 
   gulp.watch([

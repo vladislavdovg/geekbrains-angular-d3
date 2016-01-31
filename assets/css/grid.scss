@@ -1,0 +1,15 @@
+.svg-border {
+  pointer-events: none;
+  stroke: #a9b0b8;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+g.axis {
+  pointer-events: none;
+
+  line {
+    fill: none;
+    stroke: #ddd;
+  }
+}

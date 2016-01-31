@@ -23,6 +23,10 @@ class Server {
       maxAge: this.env === 'production' ? 31536000 : 0
     }));
 
+    this.app.use('/vendor', this.express.static(path.join(__dirname, 'vendor'), {
+      maxAge: this.env === 'production' ? 31536000 : 0
+    }));
+
     this.clientRouter.get('/', (req, res, next) => {
       res.render('index', {
         pageTitle: 'Главная страница',
