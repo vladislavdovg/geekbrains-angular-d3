@@ -29,7 +29,7 @@ class Server {
 
     this.clientRouter.get('/', (req, res, next) => {
       res.render('index', {
-        pageTitle: 'Главная страница',
+        pageTitle: 'Kit App',
       })
     });
 

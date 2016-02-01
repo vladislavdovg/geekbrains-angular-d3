@@ -1,15 +1,15 @@
 'use strict';
 
 const gulp = require('gulp');
-const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
-const browserify = require('browserify');
-const autoprefixer = require('gulp-autoprefixer');
-const plumber = require('gulp-plumber');
-const vinylSource = require('vinyl-source-stream');
 const rename = require('gulp-rename');
 const notify = require('gulp-notify');
+const plumber = require('gulp-plumber');
+const browserify = require('browserify');
 const sourceMaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
+const vinylSource = require('vinyl-source-stream');
+const browserSync = require('browser-sync').create();
 
 gulp.task('default', ['js', 'css', 'watch']);
 
@@ -31,11 +31,13 @@ gulp.task('css', function () {
     .pipe(plumber({
       errorHandler: notify.onError('SASS error: <%= error.message %>')
     }))
+    .pipe(sourceMaps.init())
     .pipe(sass())
     .pipe(autoprefixer({
       browsers: ['last 10 versions']
     }))
     .pipe(rename('combined.css'))
+    .pipe(sourceMaps.write())
     .pipe(gulp.dest('./build'))
     .pipe(browserSync.stream());
 });

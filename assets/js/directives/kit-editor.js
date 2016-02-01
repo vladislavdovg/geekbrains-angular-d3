@@ -65,7 +65,6 @@ module.exports = ['d3Factory', function (d3Factory) {
           .attr('height', 0);
 
         var DURATION = 800;
-
         var pageWidth = $scope.editor.pageProporties.widthMm *
           $scope.editor.features.pixelsPerMm;
         var pageHeight = $scope.editor.pageProporties.heightMm *
@@ -111,8 +110,25 @@ module.exports = ['d3Factory', function (d3Factory) {
             return d;
           });
 
-      });
+        $scope.editor.behavior.d3 = {
+          zoom: d3.behavior.zoom()
+            .scale(1)
+            .scaleExtent([.2, 10])
+            .on('zoom', function () {
+              var t = d3.event.translate;
+              $scope.editor.svg.container
+                .attr('transform', 'translate(' + t + ')scale(' + d3.event.scale + ')');
+
+              t = t.toString().split(','); // 1, 2 -> [1, 2]
+              $scope.editor.position.x = t[0];
+              $scope.editor.position.y = t[1];
+            })
+        };
+
+        g.call($scope.editor.behavior.d3.zoom);
+        $scope.editor.behavior.d3.zoom.event($scope.editor.svg.container);
+
+      })
     }
   }
-
 }];

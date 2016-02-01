@@ -4,20 +4,20 @@
   "description": "kit",
   "main": "server.js",
   "dependencies": {
-    "express": "latest",
-    "jade": "latest"
+    "express": "^4.13.4",
+    "jade": "^1.11.0"
   },
   "devDependencies": {
-    "gulp": "latest",
-    "gulp-plumber": "latest",
-    "browserify": "latest",
-    "gulp-sass": "latest",
-    "gulp-autoprefixer": "latest",
-    "gulp-notify": "latest",
-    "gulp-rename": "latest",
-    "browser-sync": "latest",
-    "vinyl-source-stream": "latest",
-    "gulp-sourcemaps": "latest"
+    "browser-sync": "^2.11.1",
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
