@@ -1,9 +1,19 @@
-#container {
+#header {
   position: fixed;
   top: 0;
   right: 0;
+  left: 0;
+  height: 40px;
+  background-color: #484848;
+}
+
+#container {
+  position: fixed;
+  top: 40px;
+  right: 0;
   bottom: 0;
   left: 0;
+  border: 1px solid #212121;
 
   .kit-editor {
     position: relative;
@@ -19,7 +29,7 @@
 
 svg {
   .underlay {
-    fill: none;
+    fill: #5d5d5d;
     pointer-events: all;
   }
 }

@@ -53,26 +53,20 @@ module.exports = ['d3Factory', function (d3Factory) {
 
         var gGridX = $scope.editor.svg.container.append('g')
           .attr('class', 'x axis');
-
         var gGridY = $scope.editor.svg.container.append('g')
           .attr('class', 'y axis');
+
+        var pageWidth = $scope.editor.pageProporties.widthMm *
+          $scope.editor.features.pixelsPerMm;
+        var pageHeight = $scope.editor.pageProporties.heightMm *
+          $scope.editor.features.pixelsPerMm;
+        var containerWidth = $element[0].offsetWidth;
+        var containerHeight = $element[0].offsetHeight;
 
         var borderFrame = $scope.editor.svg.container.append('rect')
           .attr('class', 'svg-border')
           .attr('x', 0)
           .attr('y', 0)
-          .attr('width', 0)
-          .attr('height', 0);
-
-        var DURATION = 800;
-        var pageWidth = $scope.editor.pageProporties.widthMm *
-          $scope.editor.features.pixelsPerMm;
-        var pageHeight = $scope.editor.pageProporties.heightMm *
-          $scope.editor.features.pixelsPerMm;
-
-        borderFrame
-          .transition()
-          .duration(DURATION)
           .attr('width', pageWidth)
           .attr('height', pageHeight);
 
@@ -82,13 +76,10 @@ module.exports = ['d3Factory', function (d3Factory) {
 
         linesX.enter().append('line')
           .attr('x1', 0)
-          .attr('x2', 0)
+          .attr('x2', pageWidth)
           .attr('y1', function (d) {
             return d;
           })
-          .transition()
-          .duration(DURATION)
-          .attr('x2', pageWidth)
           .attr('y2', function (d) {
             return d;
           });
@@ -99,13 +90,10 @@ module.exports = ['d3Factory', function (d3Factory) {
 
         linesY.enter().append('line')
           .attr('y1', 0)
-          .attr('y2', 0)
+          .attr('y2', pageHeight)
           .attr('x1', function (d) {
             return d;
           })
-          .transition()
-          .duration(DURATION)
-          .attr('y2', pageHeight)
           .attr('x2', function (d) {
             return d;
           });
@@ -116,6 +104,9 @@ module.exports = ['d3Factory', function (d3Factory) {
             .scaleExtent([.2, 10])
             .on('zoom', function () {
               var t = d3.event.translate;
+              t[0] += (containerWidth - pageWidth) / 2;
+              t[1] += (containerHeight - pageHeight) / 2;
+
               $scope.editor.svg.container
                 .attr('transform', 'translate(' + t + ')scale(' + d3.event.scale + ')');
 
@@ -128,6 +119,9 @@ module.exports = ['d3Factory', function (d3Factory) {
         g.call($scope.editor.behavior.d3.zoom);
         $scope.editor.behavior.d3.zoom.event($scope.editor.svg.container);
 
+        $scope.pageCenter = function () {
+          console.log('click');
+        };
       })
     }
   }

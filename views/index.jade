@@ -6,6 +6,9 @@ html
 
     title= pageTitle
   body(data-ng-app='kitApp')
+    header#header
+      .toolbar
+        button(type='button' data-ng-click='pageCenter()') По центру
     #container
       .kit-editor(data-kit-editor)
 

@@ -1,8 +1,9 @@
 .svg-border {
   pointer-events: none;
-  stroke: #a9b0b8;
-  stroke-width: 1.5;
+  stroke: #000;
   fill: none;
+  shape-rendering: crispEdges;
+  vector-effect: non-scaling-stroke;
 }
 
 g.axis {
@@ -10,7 +11,7 @@ g.axis {
 
   line {
     fill: none;
-    stroke: #ddd;
+    stroke: #444;
     shape-rendering: crispEdges;
     vector-effect: non-scaling-stroke;
   }
